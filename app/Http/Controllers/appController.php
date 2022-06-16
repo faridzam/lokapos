@@ -87,7 +87,7 @@ class appController extends Controller
 
     public function pickStore($id)
     {
-        $stores = pos_pc_desktop::findOrFail($id);
+        $stores = pos_pc_desktop::where('id', $id)->first();
 
         $store = session()->get('store', []);
 
@@ -97,7 +97,7 @@ class appController extends Controller
             session()->put('store', []);
             $store[$id] = [
                 "id" => $stores->id,
-                "store_id" => $stores->id_store,
+                "store_id" => $stores->store_id,
                 "name" => $stores->name,
             ];
         } else {
@@ -105,13 +105,13 @@ class appController extends Controller
             session()->forget('store');
             $store[$id] = [
                 "id" => $stores->id,
-                "store_id" => $stores->id_store,
+                "store_id" => $stores->store_id,
                 "name" => $stores->name,
             ];
         }
 
         session()->put('store', $store);
-        return redirect('/deposit');
+        return redirect('/app');
     }
 
 }

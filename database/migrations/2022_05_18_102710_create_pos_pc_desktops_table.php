@@ -22,7 +22,7 @@ class CreatePosPcDesktopsTable extends Migration
                 $table->string('cashier_printer')->nullable();
                 $table->string('kitchen_printer')->nullable();
                 $table->string('bar_printer')->nullable();
-                $table->boolean('isActive')->default('1')->change();
+                $table->boolean('isActive')->default(true);
                 $table->timestamps();
             });
         }

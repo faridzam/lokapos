@@ -80,12 +80,29 @@ class LoginController extends Controller
 
             //return redirect()->intended('deposit');
 
-            return redirect('/pick-store/'.$request->header('User-Agent'));
+            return redirect('api/pick-store/'.$request->header('User-Agent'));
             //return redirect('pick-store/1');
         }
 
         session()->flash('error', 'login gagal!');
         return back();
+
+    }
+
+    public function logout(Request $request){
+
+            pos_log_activity_desktop::create([
+                'pic' => Auth::guard('cashier')->user()->name,
+                'type' => 6,
+                'note' => Auth::guard('cashier')->user()->name." meninggalkan sistem POS",
+            ]);
+
+            Auth::guard('cashier')->logout();
+            $request->session()->flush();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return redirect('/login');
 
     }
 }

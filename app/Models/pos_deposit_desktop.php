@@ -21,4 +21,9 @@ class pos_deposit_desktop extends Model
         'pec1',
         'total',
     ];
+
+    public function cashier()
+    {
+        return $this->belongsTo(pos_pc_desktop::class);
+    }
 }

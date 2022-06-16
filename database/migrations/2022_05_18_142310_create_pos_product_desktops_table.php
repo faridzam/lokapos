@@ -18,12 +18,12 @@ class CreatePosProductDesktopsTable extends Migration
             Schema::create('pos_product_desktops', function (Blueprint $table) {
                 $table->id();
                 $table->bigInteger('recipe_id');
-                $table->string('product_code');
+                $table->string('product_code')->nullable();
+                $table->string('image')->nullable();
                 $table->string('name');
                 $table->bigInteger('cost');
-                $table->bigInteger('tax');
                 $table->bigInteger('price');
-                $table->boolean('isActive')->default('1')->change();
+                $table->boolean('isActive')->default(true);
                 $table->timestamps();
             });
 

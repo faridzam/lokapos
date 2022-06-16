@@ -17,7 +17,12 @@ class pos_cashier_desktop extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password',
+        'name',
+        'username',
+        'email',
+        'email_verified_at',
+        'password',
+        'isActive',
     ];
 
     /**
@@ -38,4 +43,8 @@ class pos_cashier_desktop extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function deposit()
+    {
+        return $this->hasMany(pos_deposit_desktop::class);
+    }
 }

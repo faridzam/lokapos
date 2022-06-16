@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\depositController;
 use App\Http\Controllers\appController;
+use App\Http\Controllers\penjualanController;
+use App\Http\Controllers\printController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,9 +28,26 @@ Route::middleware(['guest'])->group(function () {
 
 Route::middleware(['auth:cashier'])->group(function () {
 
+    Route::get('/{vue_capture?}', function () {
+        return view('index');
+    })->where('vue_capture', '[\/\w\.-]*');
+
     Route::get('/', [HomeController::class, 'index'])->name('welcome');
-    Route::get('/app', [appController::class, 'index'])->name('app');
-    Route::get('pick-store/{id}', [appController::class, 'pickStore'])->name('pick.store');
-    Route::resource('deposit', depositController::class);
+    Route::post('/logout', [loginController::class, 'logout'])->name('logout');
+    //Route::get('/app', [appController::class, 'index'])->name('app');
+    //Route::get('pick-store/{id}', [appController::class, 'pickStore'])->name('pick.store');
+
+    Route::resource('depositLaravel', depositController::class);
+    Route::post('/storeOrder', [penjualanController::class, 'storeOrder'])->name('storeOrder');
+    Route::post('/storeSavedOrder', [penjualanController::class, 'storeSavedOrder'])->name('storeSavedOrder');
+    Route::post('/saveCart', [penjualanController::class, 'saveCart'])->name('saveCart');
+    Route::post('/saveCartPrint', [penjualanController::class, 'saveCartPrint'])->name('saveCartPrint');
+    Route::post('/printBillAll/{id}', [penjualanController::class, 'printBillAll'])->name('printBillAll');
+    Route::post('/printBillRemain/{id}', [penjualanController::class, 'printBillRemain'])->name('printBillRemain');
+    Route::post('/openCashDrawer', [printController::class, 'openCashDrawer'])->name('openCashDrawer');
+    Route::post('/closeOrder', [penjualanController::class, 'closeOrder'])->name('closeOrder');
+    Route::post('/printInvoice2', [printController::class, 'printInvoice2'])->name('printInvoice2');
+
+    //Route::get('penjualanLaravel', [penjualanController::class, 'showProduct']);
 
 });

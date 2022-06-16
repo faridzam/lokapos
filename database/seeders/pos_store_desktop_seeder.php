@@ -18,7 +18,7 @@ class pos_store_desktop_seeder extends Seeder
         DB::table('pos_store_desktops')->insert([
             'name' => 'Zam',
             'type' => 3,
-            'area' => 3,
+            'area' => 7,
         ]);
     }
 }

@@ -17,4 +17,14 @@ class pos_pc_desktop extends Model
         'bar_printer',
         'isActive',
     ];
+
+    public function store()
+    {
+        return $this->belongsTo(pos_store_desktop::class);
+    }
+
+    public function deposit()
+    {
+        return $this->hasMany(pos_deposit_desktop::class);
+    }
 }

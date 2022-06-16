@@ -22,7 +22,7 @@ class CreatePosCashierDesktopsTable extends Migration
                 $table->timestamp('email_verified_at')->nullable();
                 $table->string('password');
                 $table->rememberToken();
-                $table->boolean('isActive')->default('1')->change();
+                $table->boolean('isActive')->default(true);
                 $table->timestamps();
             });
         }

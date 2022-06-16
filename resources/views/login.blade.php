@@ -129,29 +129,30 @@ body {
     color: #039BE5
 }
 
+
 .ui-keyboard{
-}
-.ui-keyboard-keyset{
-    top: 50%;
-}
-.ui-keyboard-button{
-    width: 6rem;
-    height: 4rem;
-}
-.ui-keyboard-space{
-    width: 35rem;
-    height: 4rem;
-}
-.ui-keyboard-bksp{
-    width: 15rem;
-    height: 4rem;
-}
-.ui-keyboard-button span{
-    font-size: 2em;
-}
-.ui-keyboard-actionkey{
-    font-size: 2.5em;
-}
+        }
+        .ui-keyboard-keyset{
+            top: 50%;
+        }
+        .ui-keyboard-button{
+            width: 6rem;
+            height: 4rem;
+        }
+        .ui-keyboard-space{
+            width: 35rem;
+            height: 4rem;
+        }
+        .ui-keyboard-bksp{
+            width: 15rem;
+            height: 4rem;
+        }
+        .ui-keyboard-button span{
+            font-size: 2em;
+        }
+        .ui-keyboard-actionkey{
+            font-size: 2.5em;
+        }
 
 @media(max-width: 380px) {
     .wrapper {

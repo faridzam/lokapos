@@ -16,7 +16,7 @@ class pos_cashier_desktop_seeder extends Seeder
     public function run()
     {
         //
-        DB::table('pos_cashier_desktop')->insert([
+        DB::table('pos_cashier_desktops')->insert([
             'name' => 'Zam',
             'username' => 'faridzam',
             'email' => 'zamtechcorp@gmail.com',

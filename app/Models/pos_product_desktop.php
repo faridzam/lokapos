@@ -12,10 +12,15 @@ class pos_product_desktop extends Model
     protected $fillable = [
         'recipe_id',
         'product_code',
+        'image',
         'name',
         'cost',
-        'tax',
         'price',
         'isActive',
     ];
+
+    public function product_store()
+    {
+        return $this->hasMany(pos_product_desktop::class);
+    }
 }

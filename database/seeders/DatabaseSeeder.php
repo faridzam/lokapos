@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         $this->call([
-            user_seeder::class,
-            pos_kasir_desktop_seeder::class,
+            pos_cashier_desktop_seeder::class,
+            pos_pc_desktop_seeder::class,
             pos_store_desktop_seeder::class,
         ]);
     }

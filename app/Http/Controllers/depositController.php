@@ -42,7 +42,6 @@ class depositController extends Controller
     public function store(Request $request)
     {
         //
-
         if (session('store')) {
             foreach (session('store') as $id_store => $choosenStore) {
                 $PC = $choosenStore['id'];
@@ -69,7 +68,7 @@ class depositController extends Controller
         // Use other controller's method in this controller's method
         $print->printDeposit();
 
-        return redirect('app');
+        return redirect('penjualan');
 
     }
 

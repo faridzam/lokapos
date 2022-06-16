@@ -13,6 +13,12 @@ class pos_store_desktop extends Model
         'name',
         'type',
         'area',
+        'isActive',
     ];
+
+    public function pc()
+    {
+        return $this->hasMany(pos_pc_desktop::class);
+    }
 
 }

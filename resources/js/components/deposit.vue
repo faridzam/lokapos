@@ -1,7 +1,7 @@
 <template>
     <div class="deposit-form-container">
 
-        <form @submit="onSubmit" class="deposit-form" action="/deposit" method="POST">
+        <form @submit="onSubmit" class="deposit-form" action="/depositLaravel" method="POST">
 
             <input type="text" name="_token" id="_token" :value="csrf" hidden>
 
@@ -124,7 +124,7 @@
                     <button id="sub" type="submit" class="button-17" style="margin-left: 5rem; margin-right: auto; height: 5rem; width: 15rem; border-radius: 2rem; font-size: 1.5rem; font-weight: bolder; letter-spacing: 4px;" value="Submit">SUBMIT!</button>
 
 
-                    <div class="total-title" style="margin: 0; padding: 0; text-align: left; font-size: 2rem; color: #FFFAF0;">
+                    <div class="total-title" style="margin: 0; padding: 0; text-align: left; font-size: 2rem; color: #413F42;">
                         <h2 style="">Total: </h2>
                     </div>
 
@@ -314,7 +314,7 @@ export default {
             formData.append("pec2", this.$refs.pec2.value);
             formData.append("pec1", this.$refs.pec1.value);
             formData.append("nominal", this.$refs.nominal.value);
-            axios.post("/deposit", formData)
+            axios.post("/depositLaravel", formData)
             .then(response => {
                 console.log('ok');
                 console.log(response.data);
@@ -332,7 +332,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
     .flex-break{
         flex-basis: 100%;
         height: 0;
@@ -352,7 +352,7 @@ export default {
         width: 60vw;
         margin-top: 5rem;
 
-        background: rgba(	0, 0, 88, 0.2);
+        background: rgba(	255, 255, 255, 0.4);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
@@ -364,13 +364,13 @@ export default {
         align-items: center;
     }
     .minus{
-        fill: #FFFAF0;
+        fill: rgb(245, 191, 73);
         font-size: 2rem;
         padding-right: 1rem;
         padding-left: 1rem;
     }
     .plus{
-        fill: #FFFAF0;
+        fill: rgb(245, 191, 73);
         padding-right: 1rem;
         padding-left: 1rem;
         font-size: 2rem;
@@ -382,7 +382,7 @@ export default {
         width: 3rem;
         height: 3rem;
         border-radius:5px;
-        color: #FFFAF0;
+        color: #413F42;
         background: rgba(255, 255, 255, 0.2);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
@@ -396,7 +396,7 @@ export default {
         margin-right: 4vw;
         text-align: left;
         font-size: 2rem;
-        color: #FFFAF0;
+        color: #413F42;
     }
     .pecahan-title h2{
         margin:1rem;
@@ -416,7 +416,7 @@ export default {
         width: 20rem;
         height: 3rem;
         border-radius:5px;
-        color: #FFFAF0;
+        color: #413F42;
         background: rgba(255, 255, 255, 0.2);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
@@ -499,5 +499,13 @@ export default {
 
     .button-17:disabled {
     box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+
+    input{
+            background: none;
+    }
+    .flex-break{
+            flex-basis: 100%;
+            height: 0;
     }
 </style>

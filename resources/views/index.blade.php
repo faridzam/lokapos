@@ -3,61 +3,79 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="this application is made by faridzam.com">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>LokaPOS Desktop</title>
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('/js/scripts.js') }}"></script>
-    <script src="{{ mix('/js/app.js') }}"></script>
-
-    <!-- Datatables -->
-    <script src="{{ asset('js/datatables.js') }}"></script>
-    <link href="{{ asset('css/datatables.css')}}" rel="stylesheet" />
-
-    <!-- swal -->
-    <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
-    <link href="{{ asset('css/sweetalert2.css')}}" rel="stylesheet" />
-
-    <!-- virtual-keyboard -->
-    <script src="{{ asset('js/jquery.keyboard.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.mousewheel.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-all.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-altkeyspopup.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-autocomplete.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-caret.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-extender.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-mobile.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-navigation.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-previewkeyset.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-scramble.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.keyboard.extension-typing.min.js') }}"></script>
-    <link href="{{ asset('css/keyboard.min.css')}}" rel="stylesheet"/>
-    <link href="{{ asset('css/keyboard-basic.min.css')}}" rel="stylesheet"/>
-    <link href="{{ asset('css/keyboard-dark.min.css')}}" rel="stylesheet"/>
-    <link href="{{ asset('css/keyboard-previewkeyset.min.css')}}" rel="stylesheet"/>
-
-
     <style>
-        .navbar-right{
-            display: flex;
-            align-items: center;
+
+        *{
+            user-select: none;
+        }
+        .cursor-pointer{
+            cursor: pointer;
         }
 
-        .container{
-            display: flex;
+        .row{
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: 10px;
         }
 
+        .col-12{
+            grid-column: span 12;
+        }
+        .col-11{
+            grid-column: span 11;
+        }
+        .col-10{
+            grid-column: span 10;
+        }
+        .col-9{
+            grid-column: span 9;
+        }
+        .col-8{
+            grid-column: span 8;
+        }
+        .col-7{
+            grid-column: span 7;
+        }
+        .col-6{
+            grid-column: span 6;
+        }
+        .col-5{
+            grid-column: span 5;
+        }
+        .col-4{
+            grid-column: span 4;
+        }
+        .col-3{
+            grid-column: span 3;
+        }
+        .col-2{
+            grid-column: span 2;
+        }
+        .col-1{
+            grid-column: span 1;
+        }
+/*
         .ui-keyboard{
         }
         .ui-keyboard-keyset{
             top: 50%;
         }
         .ui-keyboard-button{
-            width: 6rem;
-            height: 4rem;
+            width: 6rem !important;
+            height: 4rem !important;
+        }
+        .ui-keyboard-space{
+            width: 35rem !important;
+            height: 4rem !important;
+        }
+        .ui-keyboard-bksp{
+            width: 15rem !important;
+            height: 4rem !important;
         }
         .ui-keyboard-space{
             width: 35rem;
@@ -72,20 +90,40 @@
         }
         .ui-keyboard-actionkey{
             font-size: 2.5em;
-        }
+        } */
+
     </style>
     @yield('styles')
-
-    <link href="{{ asset('css/styles.css')}}" rel="stylesheet" />
 
   </head>
   <body>
 
-    <div id="app">
-        <example-component></example-component>
+    <div id="app" style="display: flex; justify-content: center;flex-wrap: wrap;">
+        <navbar-component></navbar-component>
+        <app-component></app-component>
     </div>
 
     @yield('scripts')
 
+    <!-- Main -->
+    {{-- <script src="{{ mix('/js/app.js') }}"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('/js/scripts.js') }}"></script>
+
+    <!-- Datatables -->
+    <script src="{{ asset('js/datatables.js') }}"></script>
+    <link href="{{ asset('css/datatables.css')}}" rel="stylesheet" />
+
+    <!-- swal -->
+    <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
+    <link href="{{ asset('css/sweetalert2.css')}}" rel="stylesheet" />
+
+    <script>
+
+    </script>
+
   </body>
+
+
 </html>

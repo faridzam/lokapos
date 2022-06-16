@@ -14,4 +14,9 @@ class pos_category_desktop extends Model
         'type',
         'isActive',
     ];
+
+    public function product_store()
+    {
+        return $this->hasMany(pos_product_store_desktop::class);
+    }
 }

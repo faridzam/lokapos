@@ -19,7 +19,7 @@ class CreatePosCategoryDesktopsTable extends Migration
                 $table->id();
                 $table->string('name');
                 $table->enum('type', ['makanan', 'minuman', 'non-konsumsi']);
-                $table->boolean('isActive')->default('1')->change();
+                $table->boolean('isActive')->default(true);
                 $table->timestamps();
             });
 

@@ -20,7 +20,7 @@ class CreatePosStoreDesktopsTable extends Migration
                 $table->string('name');
                 $table->enum('type', ['fnb', 'retail', 'others']);
                 $table->enum('area', ['downtown', 'pesisir', 'balalantara', 'kamayayi', 'ararya', 'segara prada', 'others']);
-                $table->boolean('isActive')->default('1')->change();
+                $table->boolean('isActive')->default(true);
                 $table->timestamps();
             });
 

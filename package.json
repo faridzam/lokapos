@@ -15,9 +15,11 @@
         "axios": "^0.21.4",
         "bootstrap": "^5.1.3",
         "jquery-ui": "^1.13.1",
+        "laravel-echo": "^1.11.7",
         "laravel-mix": "^6.0.43",
         "lodash": "^4.17.19",
         "postcss": "^8.4.13",
+        "pusher-js": "^7.1.1-beta",
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
@@ -28,10 +30,20 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "cross-env": "^7.0.3",
         "feather-icons": "^4.29.0",
         "jquery": "^3.6.0",
         "laravel-mix-svg-vue": "^0.4.1",
+        "simple-keyboard": "^3.4.105",
+        "simple-keyboard-layouts": "^3.1.122",
         "vform": "^2.1.2",
-        "vue-router": "^3.5.3"
+        "vue-barcode-scanner": "^0.8.1",
+        "vue-long-click": "^0.1.0",
+        "vue-router": "^3.5.3",
+        "vue-select": "^3.18.3",
+        "vue-sweetalert2": "^5.0.5",
+        "vue-toast-notification": "^0.6.2",
+        "vuex": "^3.6.2",
+        "vuex-persistedstate": "^4.1.0"
     }
 }

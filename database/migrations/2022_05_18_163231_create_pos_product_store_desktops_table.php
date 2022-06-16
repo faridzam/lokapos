@@ -13,12 +13,19 @@ class CreatePosProductStoreDesktopsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pos_product_store_desktops', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('store_id');
-            $table->bigInteger('product_id');
-            $table->timestamps();
-        });
+
+        if (!Schema::hasTable('pos_product_store_desktops')) {
+
+            Schema::create('pos_product_store_desktops', function (Blueprint $table) {
+                $table->id();
+                $table->bigInteger('store_id');
+                $table->bigInteger('category_id');
+                $table->bigInteger('product_id');
+                $table->timestamps();
+            });
+
+
+        }
     }
 
     /**
